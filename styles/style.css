@@ -25,6 +25,7 @@
 
 body {
     background-color: black;
+    width: fit-content;
 }
 
 /* Navigation Section */
@@ -107,9 +108,30 @@ nav {
     background-color: var(--primary-btn-hover-color);
 }
 
-@media screen and (max-width: 768px) {
-    nav {
-        display: none;
+.hamburger-btn {
+    display: none;
+    color: white;
+    padding: 5px;
+    border: none;
+}
+
+@media screen and (max-width: 1023px) {
+    .hamburger-btn {
+        display: block;
+    }
+
+    .header {
+        justify-content: space-between;
+    }
+
+
+    .invisible-in-phone {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    .nav-elements ul {
+        gap: 25px;
     }
 }
 
@@ -171,10 +193,17 @@ nav {
     color: blue;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .hero-btn-container {
         flex-direction: column;
+        width: 80%;
     }
+
+    .hero-section {
+        width: 95%;
+    }
+
+
 }
 
 /* FEATURE SECTION */
@@ -209,6 +238,18 @@ nav {
 .feature p {
     font-family: sans-serif;
     color: var(--secondary-color);
+}
+
+@media screen and (max-width: 767px) {
+    .feature-section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .feature {
+        width: 95%;
+    }
 }
 
 /* ADVANTAGE SECTION */
@@ -281,6 +322,16 @@ nav {
     line-height: 28px;
 }
 
+@media screen and (max-width: 767px) {
+    .advantage-details {
+        grid-template-columns: auto;
+    }
+
+    .single-advantage-detail p {
+        width: 95%;
+    }
+}
+
 /* PARTNER SECTION */
 
 .partner-section {
@@ -324,6 +375,12 @@ nav {
 
 .dark-different {
     background-color: white;
+}
+
+@media screen and (max-width: 767px) {
+    .partners {
+        grid-template-columns: auto;
+    }
 }
 
 /* TOKEN MODEL SECTION */
@@ -389,22 +446,31 @@ nav {
     color: var(--secondary-color);
 }
 
+@media screen and (max-width: 767px) {
+    .token-model-section {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .token-model-left-part {
+        align-items: center;
+    }
+
+}
+
 
 /* FOOTTER */
 .footer-container {
     display: flex;
-    gap: 100px;
     justify-content: flex-start;
+    gap: 5%;
     margin-block: 80px;
 }
 
 .footer-item img {
     width: 40px;
     margin: 8px 28px 16px 0px;
-}
-
-.footer-copyright {
-    font-size: 18px;
 }
 
 .footer-item {
@@ -418,4 +484,11 @@ nav {
 .footer-item p {
     color: var(--secondary-color);
     cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
