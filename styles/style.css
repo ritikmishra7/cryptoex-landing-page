@@ -5,27 +5,27 @@
     --secondary-color: rgb(161, 192, 250);
     --primary-btn-color: rgb(32, 70, 237);
     --primary-btn-hover-color: rgb(46, 75, 205);
+    --light-mode-primary-color: #6176A1;
+    --light-mode-secondary-color: black;
 }
 
 .gradient-color {
-    background-image: linear-gradient(to right, #20B9F1, #3C79CB);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    background-image: linear-gradient(to right, #20B9F1, #3C79CB) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: black; */
     background-color: inherit;
     font-family: sans-serif;
 }
 
 body {
     background-color: black;
-    width: fit-content;
 }
 
 /* Navigation Section */
@@ -33,9 +33,9 @@ body {
 nav {
     position: fixed;
     top: 0;
-    left: 5%;
+    left: 0;
     background-color: black;
-    width: 90%;
+    width: 100%;
     z-index: 1000;
 }
 
@@ -85,6 +85,14 @@ nav {
     font-size: 18px;
     color: rgb(138, 172, 244);
     font-family: sans-serif;
+}
+
+.hide-icon {
+    display: none;
+}
+
+.show-icon {
+    display: block;
 }
 
 .use-dopex-btn {
@@ -201,8 +209,18 @@ nav {
 
     .hero-section {
         width: 95%;
+        gap: 25px;
     }
 
+    .use-dopex-btn {
+        padding: 15px;
+        font-size: larger;
+    }
+
+    .documentation-btn {
+        padding: 15px;
+        font-size: larger;
+    }
 
 }
 
@@ -325,11 +343,22 @@ nav {
 @media screen and (max-width: 767px) {
     .advantage-details {
         grid-template-columns: auto;
+        width: 100%;
+        gap: 20px;
     }
 
     .single-advantage-detail p {
         width: 95%;
     }
+
+    .advantage {
+        padding: 0px;
+    }
+
+    .advantage-section {
+        padding: 6px;
+    }
+
 }
 
 /* PARTNER SECTION */
@@ -459,6 +488,13 @@ nav {
 
 }
 
+@media screen and (max-width: 639px) {
+    .token-model-right-part {
+        flex-direction: column;
+        text-align: left;
+    }
+}
+
 
 /* FOOTTER */
 .footer-container {
@@ -491,4 +527,55 @@ nav {
         flex-direction: column;
         gap: 20px;
     }
+}
+
+@media screen and (max-width: 875px) {
+    .main-section {
+        width: 97%;
+    }
+}
+
+/* Light mode */
+.light-mode-bg-color {
+    background-color: rgb(246, 249, 255) !important;
+}
+
+.light-mode-nav-items {
+    color: var(--light-mode-primary-color) !important;
+}
+
+.light-mode-nav-items:hover {
+    cursor: pointer !important;
+    color: blue !important;
+}
+
+.light-mode-primary-text-color {
+    color: var(--light-mode-primary-color) !important;
+}
+
+
+.light-mode-secondary-text-color {
+    color: var(--light-mode-secondary-color) !important;
+}
+
+.light-mode-documentation-btn {
+    color: rgb(97, 118, 161) !important;
+    border: 1px solid rgb(97, 118, 161) !important;
+}
+
+.light-mode-logo {
+    filter: brightness(100%) !important;
+}
+
+.light-mode-white-bg {
+    background-color: white !important;
+}
+
+.light-mode-advantage-section {
+    background-color: white !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
+}
+
+.light-mode-blue-color {
+    color: blue !important;
 }
