@@ -6,6 +6,7 @@ const navUL = document.getElementById('nav-ul');
 const navLIs = document.getElementsByClassName('nav-li');
 const brandName = document.getElementById('brand-name');
 const hamburger = document.getElementById('hamburger-btn');
+const hamburgerDropDown = document.getElementById('hamburger-dropdown');
 const brandFullName = document.getElementById('brand-full-name');
 
 
@@ -36,10 +37,27 @@ const footerH4 = document.getElementsByClassName('footer-item-h4');
 const footerP = document.getElementsByClassName('footer-item-p');
 const lightModeIcon = document.getElementById('light-mode-icon');
 const darkModeIcon = document.getElementById('dark-mode-icon');
+const copyRight = document.getElementById('copyright-time');
+
+const currYear = new Date().getFullYear();
+copyRight.innerText = `© ${currYear} Ritik Mishra`
 
 modeToggle.addEventListener('click', () => {
     toggleMode();
 });
+
+hamburger.addEventListener('click', () => {
+    if (hamburgerDropDown.classList.contains('show-hamburger-dropdown')) {
+        hamburgerDropDown.classList.remove('fade-in');
+        hamburgerDropDown.classList.add('fade-out');
+    } else {
+        hamburgerDropDown.classList.remove('fade-out');
+        hamburgerDropDown.classList.add('fade-in');
+    }
+    hamburgerDropDown.classList.toggle('show-hamburger-dropdown');
+});
+
+
 
 function toggleMode() {
     if (lightModeIcon.classList.contains('show-icon')) {
